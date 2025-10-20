@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main() {
+  char a='B';
+  if(a==tolower(a)){
+      cout<<a<<" is already in lower case"<<endl;
+  }
+  else{
+      
+      cout<<" Lowercase of "<<a<<" is ";
+      a=tolower(a);
+      cout<<a;
+
+    
+}
+return 0;}
