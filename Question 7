@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int inversion =0;
+    int arr[10]={22,54,12,34,98,17,83,65,49,100};
+    for(int i=0;i<((sizeof(arr))/sizeof(int))-1;i++){
+        for(int j=i+1;j<(sizeof(arr)/sizeof(int));j++){
+            if(i<j&&arr[i]>arr[j]){
+                inversion++;
+
+            }
+        }
+    }
+    cout<<"total number of inversions are "<<inversion;
+}
