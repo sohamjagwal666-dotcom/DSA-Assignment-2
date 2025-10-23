@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+void bubbleSortString(string &s) {
+    int n = s.size();
+    bool swapped;
+    for (int i = 0; i < n - 1; i++) {
+        swapped = false;
+      
+        for (int j = 0; j < n - 1 - i; j++) {
+            if (s[j] > s[j + 1]) {
+                // swap
+                char tmp = s[j];
+                s[j] = s[j + 1];
+                s[j + 1] = tmp;
+                swapped = true;
+            }
+        }
+       
+        if (!swapped)
+            break;
+    }
+}
+
+
+bool areAnagrams(string s1, string s2) {
+    if (s1.size() != s2.size())
+        return false;
+
+    bubbleSortString(s1);
+    bubbleSortString(s2);
+    return (s1 == s2);
+}
+
+int main() {
+    string a, b;
+    cout << "Enter first string: ";
+    getline(cin, a);
+    cout << "Enter second string: ";
+    getline(cin, b);
+
+    if (areAnagrams(a, b)) {
+        cout << "They are anagrams.\n";
+    } else {
+        cout << "They are NOT anagrams.\n";
+    }
+    return 0;
+}
